@@ -42,21 +42,6 @@ main {
   flex-direction: row;
 }
 
-.about-me {
-  display: flex;
-  flex-direction: row;
-}
-
-.about-me img {
-  max-width: 100%;
-  height: auto;
-  margin-right: 2rem;
-}
-
-.about-me p {
-  flex: 1;
-}
-
 h2 {
   margin-bottom: 1rem;
 }
@@ -72,4 +57,14 @@ footer {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-me p {
+  flex: 1;
+  margin-right: 2rem;
 }
