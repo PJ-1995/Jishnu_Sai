@@ -7,9 +7,10 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
+/* Header styling */
 header {
   position: relative;
   color: #fff;
@@ -22,18 +23,19 @@ header {
 header::before {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: rgba(0,0,0,0.4);
 }
 
 header h1 {
   position: relative;
   z-index: 1;
-  font-size: 2rem; /* Responsive font size */
-  margin: 0;
-  line-height: 1.2;
 }
 
+/* Navigation styling */
 nav {
   background-color: #555;
 }
@@ -41,9 +43,8 @@ nav {
 nav ul {
   list-style-type: none;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
   justify-content: center;
 }
 
@@ -54,8 +55,6 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 0;
-  display: inline-block;
 }
 
 nav ul li a:hover,
@@ -63,13 +62,10 @@ nav ul li a.active {
   text-decoration: underline;
 }
 
-/* Make the main content area fluid */
+/* Main Content Area */
 main {
   flex: 1;
   padding: 2rem;
-  max-width: 1200px;  /* Optional max-width for large screens */
-  margin: 0 auto;
-  box-sizing: border-box;
 }
 
 h2 {
@@ -78,7 +74,11 @@ h2 {
 
 /* Quotes Section */
 .quotes {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* Spacing before about-me */
+}
+
+.quotes h2 {
+  margin-bottom: 1rem;
 }
 
 blockquote {
@@ -86,52 +86,33 @@ blockquote {
   margin: 1rem 0;
   padding-left: 1rem;
   border-left: 3px solid #ccc;
-  max-width: 100%; /* Ensure no overflow */
 }
 
 blockquote cite {
-  display: inline; 
-  font-style: normal;
+  display: inline;       /* Make cite inline so it follows immediately after the quote */
+  font-style: normal;    /* Keep the author's name in normal style */
   color: #666;
-  margin-left: 0.5rem;
+  margin-left: 0.5rem;   /* Add some spacing between the quote and the name */
 }
 
 /* About-me Section */
 .about-me {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping if screen is too small */
   align-items: flex-start;
   margin-bottom: 2rem;
 }
 
 .about-me .content {
-  flex: 1 1 300px; /* Flexible basis to allow wrapping */
-  min-width: 200px;
+  flex: 1;
 }
 
 .about-me img {
-  flex: 0 0 auto;
-  max-width: 100%; 
-  height: auto;
+  max-width: 200px;
   margin-left: 1rem;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
-/* Academic History */
-.academic-history {
-  margin-bottom: 2rem;
-}
-
-.academic-history p {
-  margin-bottom: 1rem;
-}
-
-.academic-history ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-/* Footer */
+/* Footer styling */
 footer {
   background-color: #333;
   color: white;
@@ -147,23 +128,4 @@ a {
 
 main a {
   color: #0066cc; 
-}
-
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-  main {
-    padding: 1rem;
-  }
-
-  nav ul li {
-    margin: 0.5rem;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  .about-me img {
-    margin-top: 10px;
-  }
 }
