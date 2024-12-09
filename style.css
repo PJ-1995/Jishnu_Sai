@@ -33,7 +33,10 @@ body {
 /* Header */
 header {
   text-align: center;
-  padding: 3rem 0; 
+  padding-top: 3rem;
+padding-right: 3rem;
+padding-bottom: 3rem;
+padding-left: 0; 
   background: url('linkedin_cover.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
