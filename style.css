@@ -32,85 +32,72 @@ body {
 
 /* Header */
 header {
-  width: 100%; 
-  color: #fff;
   text-align: center;
   padding: 3rem 0; 
   background: url('linkedin_cover.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
-  border-radius: 8px 8px 0 0; 
-  position: relative;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0,0,0,0.4);
+  color: #fff;
 }
 
 header h1 {
-  position: relative;
-  z-index: 1;
   font-size: 2rem;
   margin: 0;
-  color: #fff;
 }
 
 /* Navigation bar */
 nav {
-  width: 100%; 
   background-color: #555; 
-  height: 35px; /* Fixed height */
-  position: relative; 
-  z-index: 2; 
+  padding: 0.5rem 0;
+  position: relative;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
-  padding: 0; 
-  margin: 0 0 20px 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-margin-top: -0.4rem;      /* No space at the top */
-margin-right: 1rem; /* 1rem of space on the right */
-margin-bottom: 0;   /* No space at the bottom */
-margin-left: 1rem;  /* 1rem of space on the left */
+  margin: 0 10px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  padding: 1rem 0;
-  display: inline-block;
+  padding: 0.75rem 1rem;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+.hamburger {
+  display: none;
+  font-size: 2rem;
 }
 
-main {
-  padding: 1rem 0;
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none; 
+    flex-direction: column;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
 }
 
 /* About-me Section */
 .about-me {
   display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap; 
-  margin-bottom: 2rem;
+  align-items: center; 
+  gap: 20px;
 }
 
 .about-me .content {
-  flex: 1 1 60%; 
-  min-width: 250px;
+  flex: 1;
 }
 
 .about-me img {
@@ -119,40 +106,11 @@ main {
   width: 100%; 
   height: auto;
   border-radius: 8px; 
-  margin-left: 20px;
-  margin-top: 38px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-self: flex-start; /* Align with the first line of text */
+  margin-top: 20px; /* Adjust margin to fine-tune alignment */
 }
 
-.academic-history {
-  margin-bottom: 2rem;
-}
-
-.academic-history ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-footer {
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 1rem 0;
-}
-
-footer p {
-  margin: 0;
-}
-
-a {
-  color: #0066cc;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Design */
 @media (max-width: 600px) {
   .about-me {
     flex-direction: column;
@@ -160,32 +118,13 @@ a:hover {
   }
 
   .about-me img {
-    margin-left: 0;
     margin-top: 20px;
   }
+}
 
-  .container {
-    width: 95%;
-    padding: 15px;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-  }
-
-  nav ul li {
-    margin: 5px;
-  }
-
-  main p {
-    font-size: 0.9rem;
-  }
-
-  .about-me h2 {
-    font-size: 1.25rem;
-  }
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
 }
