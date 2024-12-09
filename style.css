@@ -1,23 +1,46 @@
+/* Reset styles */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
 }
 
-/* Header styling */
+/* Single container for all content */
+.container {
+  border: 2px solid #333;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto; 
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
 header {
-  position: relative;
+  width: 100%; 
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 3rem 0; 
   background: url('linkedin_cover.jpg') no-repeat center center;
   background-size: cover;
+  background-position: center;
+  border-radius: 8px 8px 0 0; 
+  position: relative;
 }
 
 header::before {
@@ -33,19 +56,26 @@ header::before {
 header h1 {
   position: relative;
   z-index: 1;
+  font-size: 2rem;
+  margin: 0;
+  color: #fff;
 }
 
-/* Navigation styling */
+/* Navigation bar */
 nav {
-  background-color: #555;
+  width: 100%; 
+  background-color: #555; 
+  height: 40px; /* Fixed height */
+  position: relative; 
+  z-index: 2; 
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  list-style: none;
   display: flex;
   justify-content: center;
+  padding: 0;
+  margin: 0 0 20px 0;
 }
 
 nav ul li {
@@ -53,79 +83,105 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
   text-decoration: none;
+  color: #fff;
+  padding: 1rem 0;
+  display: inline-block;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Main Content Area */
 main {
-  flex: 1;
-  padding: 2rem;
-}
-
-h2 {
-  margin-bottom: 1rem;
-}
-
-/* Quotes Section */
-.quotes {
-  margin-bottom: 2rem; /* Spacing before about-me */
-}
-
-.quotes h2 {
-  margin-bottom: 1rem;
-}
-
-blockquote {
-  font-style: italic;
-  margin: 1rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid #ccc;
-}
-
-blockquote cite {
-  display: inline;       /* Make cite inline so it follows immediately after the quote */
-  font-style: normal;    /* Keep the author's name in normal style */
-  color: #666;
-  margin-left: 0.5rem;   /* Add some spacing between the quote and the name */
+  padding: 1rem 0;
 }
 
 /* About-me Section */
 .about-me {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap; 
   margin-bottom: 2rem;
 }
 
 .about-me .content {
-  flex: 1;
+  flex: 1 1 60%; 
+  min-width: 250px;
 }
 
 .about-me img {
+  flex: 0 0 200px;
   max-width: 200px;
-  margin-left: 1rem;
-  margin-top: 40px;
+  width: 100%; 
+  height: auto;
+  border-radius: 8px; 
+  margin-left: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer styling */
+.academic-history {
+  margin-bottom: 2rem;
+}
+
+.academic-history ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
 footer {
-  background-color: #333;
-  color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
 }
 
-/* Link Colors */
+footer p {
+  margin: 0;
+}
+
 a {
-  color: #fff; 
+  color: #0066cc;
 }
 
-main a {
-  color: #0066cc; 
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me img {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 5px;
+  }
+
+  main p {
+    font-size: 0.9rem;
+  }
+
+  .about-me h2 {
+    font-size: 1.25rem;
+  }
 }
