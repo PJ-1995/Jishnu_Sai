@@ -14,7 +14,7 @@ html, body {
 
 body {
   font-family: 'Open Sans', Arial, sans-serif;
-   text-align: justify;
+  text-align: justify;
   background-color: #f4f4f9;
   color: #333;
 }
@@ -35,9 +35,9 @@ body {
 header {
   text-align: center;
   padding-top: 3rem;
-padding-right: 3rem;
-padding-bottom: 3rem;
-padding-left: 0; 
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 0; 
   background: url('linkedin_cover.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
@@ -131,4 +131,53 @@ footer {
   background-color: #333;
   color: #fff;
   padding: 1rem 0;
+}
+
+/* Conferences/Workshops Section */
+.section-table ul li {
+  margin-bottom: 15px; /* Space between list items */
+}
+
+.section-table ul {
+  padding-left: 0; /* Remove default padding from ul */
+}
+
+.section-table h2 {
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.section-table ul li span.conference-title {
+  font-weight: bold;
+}
+
+.section-table ul li span.contribution {
+  font-style: italic;
+  color: #9e5b40; /* Highlight contributions */
+}
+
+.section-table ul li span.institution {
+  font-style: italic;
+  color: #555; /* Lighter color for institutions */
+}
+
+/* Invited Talks/Seminars Section */
+.section-table ul li span.location {
+  font-weight: bold;
+}
+
+.section-table ul li span.talk-title {
+  font-style: italic;
+  color: #555; /* Lighter color for the talk title */
+}
+
+.section-table ul li {
+  margin-bottom: 15px; /* Space between list items */
+}
+
+.section-table ul {
+  padding-left: 0; /* Remove default padding from ul */
+}
+
+.section-table h2 {
+  margin-bottom: 20px; /* Space below the heading */
 }
