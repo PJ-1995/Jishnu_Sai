@@ -62,7 +62,11 @@ p {
   color: var(--text-secondary);
   margin-top: 0;
   margin-bottom: 1.25rem;
-  text-align: left;
+  text-align: justify;       /* Aligns text flush against both left and right edges */
+  text-justify: inter-word;  /* Optimizes spacing beautifully between words */
+  hyphens: auto;             /* Enables clean word breaks at the margins if needed */
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 /* Hyperlinks Styling */
@@ -143,7 +147,7 @@ nav ul li a.active {
 .about-me {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;       /* Keeps the photo centered vertically with the text block */
   gap: 2.5rem;
   margin-bottom: 2rem;
 }
@@ -171,6 +175,7 @@ ul.academic-list, ul.data-list {
 
 ul.academic-list li, ul.data-list li {
   margin-bottom: 0.75rem;
+  text-align: justify;       /* Ensures item metadata matches clean body alignment */
 }
 
 /* Metadata Subtext Blocks */
