@@ -1,124 +1,151 @@
-/* Reset styles */
+/* ==========================================================================
+   Classic Academic Theme - Formatted to CV Accent Branding
+   ========================================================================== */
+
+:root {
+  --bg-primary: #ffffff;       /* Pure white crisp canvas background */
+  --text-primary: #000000;     /* Strong black for main content visibility */
+  --text-secondary: #222222;   /* Dark gray for continuous body paragraphs */
+  
+  /* Precision Color Base from your LaTeX CV Source Definitions */
+  --cv-header: #d75a48;        /* Bittersweet academic red-orange */
+  --tag-sepia: #704214;        /* Sepia tracking color for contributions */
+  
+  /* Blended Typography Palette for Links */
+  --link-color: #2c3e50;       /* Slate-Blue: highly readable, professional neutral */
+  --link-hover: #d75a48;       /* Smoothly transitions into Bittersweet on hover */
+  
+  --divider-color: #cccccc;    /* Clean divider color for structural horizontal rules */
+  --max-width: 800px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   box-sizing: border-box;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: inherit;
 }
 
-body {
-  font-family: 'Open Sans', Arial, sans-serif;
-  text-align: justify;
-  background-color: #f4f4f9;
-  color: #333;
-}
-
-/* Single container for all content */
+/* Page Layout Container */
 .container {
-  border: 2px solid #333;
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px auto; 
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
-/* Header */
-header {
-  position: relative; /* Make the container a positioned parent */
-  text-align: center;
-  padding: 3rem 3rem 3rem 0; 
-  background: url('linkedin_cover.jpg') no-repeat center center;
-  background-size: cover;
-  color: #fff;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.45); /* Black overlay at 50% opacity */
-  z-index: 1; /* Place the overlay behind the text */
-}
-
+/* Typography & Structural Headings */
 header h1 {
-  position: relative; /* Ensure the text stays above the overlay */
   font-size: 2rem;
-  margin: 0;
-  z-index: 2; /* Place the text above the overlay */
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--cv-header);    /* Matches Name accent color from the CV template */
 }
 
-/* Navigation bar */
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--cv-header);    /* Applied Bittersweet styling from \headingfont */
+}
+
+p {
+  color: var(--text-secondary);
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+/* Hyperlinks Styling */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent; /* Hidden underline initialization */
+  transition: color 0.15s ease, border-color 0.15s ease; /* Fluid visual shift */
+}
+
+a:visited {
+  color: var(--link-color);   /* Prevents generic purple override for look uniformity */
+}
+
+a:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover); /* Elegant modern border-underline on hover */
+}
+
+/* Clean Horizontal Rule Separation */
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--divider-color);
+  margin: 1.5rem 0;
+}
+
+/* Flat Academic Navigation System */
 nav {
-  background-color: #555; 
-  padding: 0.5rem 0;
-  position: relative;
+  margin-bottom: 1.5rem;
 }
 
 nav ul {
-  display: flex;
-  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 nav ul li {
-  margin: 0 10px;
+  display: inline;
+}
+
+nav ul li:not(:last-child)::after {
+  content: " \00b7";
+  margin-left: 0.5rem;
+  color: #666666;
+  font-weight: bold;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--link-color);
 }
 
+nav ul li a.active {
+  color: var(--cv-header);
+  text-decoration: none;
+  pointer-events: none;
+}
+
+/* Mobile Hamburger Menu */
 .hamburger {
   display: none;
-  font-size: 2rem;
+  background: none;
+  border: 1px solid var(--divider-color);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border-radius: 4px;
 }
 
-@media (max-width: 600px) {
-  .hamburger {
-    display: block;
-  }
-
-  nav ul {
-    display: none; 
-    flex-direction: column;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  nav ul li {
-    margin-bottom: 15px; /* Space between menu items */
-  }
-
-  nav ul li a {
-    display: block;
-    padding: 15px 10px; /* Ensure enough padding for tap space */
-    text-align: center; /* Center the text */
-  }
-}
-
-/* About-me Section */
+/* Layout Flex Structure for Bio section */
 .about-me {
   display: flex;
-  align-items: center; 
-  gap: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .about-me .content {
@@ -126,79 +153,79 @@ nav ul li a {
 }
 
 .about-me img {
-  flex: 0 0 200px;
-  max-width: 200px;
-  width: 100%; 
+  flex: 0 0 180px;
+  max-width: 180px;
+  width: 100%;
   height: auto;
-  border-radius: 8px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  align-self: flex-start; /* Align with the first line of text */
-  margin-top: 20px; /* Adjust margin to fine-tune alignment */
+  border: 1px solid #dddddd;
+  padding: 4px;
+  background: #ffffff;
 }
 
-@media (max-width: 600px) {
+/* Structural Academic Lists */
+ul.academic-list, ul.data-list {
+  padding-left: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+ul.academic-list li, ul.data-list li {
+  margin-bottom: 0.75rem;
+}
+
+/* Metadata Subtext Blocks */
+.meta-info {
+  display: block;
+  font-size: 0.95rem;
+  color: #444444;
+  margin-top: 0.15rem;
+}
+
+/* Inline Contribution Flags mapping Sepia markers */
+.tag-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--tag-sepia);
+  margin-right: 0.25rem;
+}
+
+/* Simple Uncluttered Footer */
+footer {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+/* ==========================================================================
+   Responsive Mobile Architecture
+   ========================================================================== */
+@media (max-width: 768px) {
   .about-me {
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
   }
 
   .about-me img {
-    margin-top: 20px;
+    order: -1;
   }
-}
 
-footer {
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 1rem 0;
-}
+  .hamburger {
+    display: block;
+  }
 
-/* Conferences/Workshops Section */
-.section-table ul li {
-  margin-bottom: 15px; /* Space between list items */
-}
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
 
-.section-table ul {
-  padding-left: 0; /* Remove default padding from ul */
-}
+  nav ul.active {
+    display: flex;
+  }
 
-.section-table h2 {
-  margin-bottom: 20px; /* Space below the heading */
-}
-
-.section-table ul li span.conference-title {
-  font-weight: bold;
-}
-
-.section-table ul li span.contribution {
-  font-style: italic;
-  color: #9e5b40; /* Highlight contributions */
-}
-
-.section-table ul li span.institution {
-  font-style: italic;
-  color: #555; /* Lighter color for institutions */
-}
-
-/* Invited Talks/Seminars Section */
-.section-table ul li span.location {
-  font-weight: bold;
-}
-
-.section-table ul li span.talk-title {
-  font-style: italic;
-  color: #555; /* Lighter color for the talk title */
-}
-
-.section-table ul li {
-  margin-bottom: 15px; /* Space between list items */
-}
-
-.section-table ul {
-  padding-left: 0; /* Remove default padding from ul */
-}
-
-.section-table h2 {
-  margin-bottom: 20px; /* Space below the heading */
+  nav ul li:not(:last-child)::after {
+    content: "";
+  }
 }
