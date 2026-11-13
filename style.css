@@ -8,12 +8,12 @@
   --text-secondary: #222222;   /* Dark gray for continuous body paragraphs */
   
   /* Precision Color Base from your LaTeX CV Source Definitions */
-  --cv-header: #d75a48;        /* Bittersweet academic red-orange */
+  --cv-header: #bf4b3b;        /* Bittersweet academic red-orange */
   --tag-sepia: #704214;        /* Sepia tracking color for contributions */
   
   /* Blended Typography Palette for Links */
   --link-color: #2c3e50;       /* Slate-Blue: highly readable, professional neutral */
-  --link-hover: #d75a48;       /* Smoothly transitions into Bittersweet on hover */
+  --link-hover: #bf4b3b;       /* Smoothly transitions into Bittersweet on hover */
   
   --divider-color: #cccccc;    /* Clean divider color for structural horizontal rules */
   --max-width: 800px;
